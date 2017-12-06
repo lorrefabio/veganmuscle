@@ -1,0 +1,12 @@
+<IfModule mod_rewrite.c>
+
+    RewriteEngine On
+
+    # Handle Authorization Redirect
+    RewriteCond %{REQUEST_URI} !^public
+    RewriteRule ^(.*)$ public/$1 [L]
+
+    ErrorDocument 403 /specific_page.html
+    Order Allow,Deny
+    Allow from 87.7.176.5
+</IfModule>
