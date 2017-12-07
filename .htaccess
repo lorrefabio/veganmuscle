@@ -3,8 +3,8 @@
     RewriteEngine On
 
     # Handle Authorization Redirect
-    RewriteCond %{REQUEST_URI} !^public
-    RewriteRule ^(.*)$ public/$1 [L]
+    RewriteCond %{REQUEST_URI} !^app
+    RewriteRule ^(.*)$ app/$1 [L]
 
     ErrorDocument 403 /specific_page.html
     Order Allow,Deny
