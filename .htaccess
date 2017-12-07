@@ -1,12 +1,11 @@
+# Uncomment the following to prevent the httpoxy vulnerability
+# See: https://httpoxy.org/
+#<IfModule mod_headers.c>
+#    RequestHeader unset Proxy
+#</IfModule>
+
 <IfModule mod_rewrite.c>
-
-    RewriteEngine On
-
-    # Handle Authorization Redirect
-    RewriteCond %{REQUEST_URI} !^app
-    RewriteRule ^(.*)$ app/$1 [L]
-
-    ErrorDocument 403 /specific_page.html
-    Order Allow,Deny
-    Allow from 87.7.176.5
+    RewriteEngine on
+    RewriteRule    ^$    webroot/    [L]
+    RewriteRule    (.*) webroot/$1    [L]
 </IfModule>
